@@ -2,7 +2,9 @@
 
 #pnorm(observed-mean/sd)
 #sum of all pnorms*total n
+#worked this out mostly by hand
 
+#final p value
 1-pchisq(10.61, 11)
 
 
