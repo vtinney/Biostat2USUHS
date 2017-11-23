@@ -120,3 +120,6 @@ predict e, resid
 
 graph twoway lfit C DTPA || scatter C DTPA
 
+#part b - formula for the line
+
+yhat = 0.1928 + 0.0063(DTPA)
