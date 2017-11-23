@@ -53,6 +53,20 @@ graph twoway lfit QTc methadone || scatter QTc methadone
 
 #part b - regression equation = 559.9028 + 0.1398(methadone)
 
+#9.4.1
+
+#(a) Compute the coefficient of determination.
+	 R-squared       =    0.2639
+#(b) Prepare an ANOVA table and use the F statistic to test the null hypothesis that b1 = 0. Let alpha = .05.
+	 Prob > F        =    0.0349
+#(c) Use the t statistic to test the null hypothesis that b1 = 0 at the .05 level of significance.
+	 t = 0.035
+#(d) Determine the p value for each hypothesis test.
+	p value for both is 0.035
+#(e) State your conclusions in terms of the problem.
+	Reject the null
+#(f) Construct the 95 percent confidence interval for b1.
+	.0112989    .2684738
 
 
 #9.3.7
@@ -123,3 +137,145 @@ graph twoway lfit C DTPA || scatter C DTPA
 #part b - formula for the line
 
 yhat = 0.1928 + 0.0063(DTPA)
+
+
+9.4.5
+#(a) Compute the coefficient of determination.
+	 R-squared       =    0.5846
+#(b) Prepare an ANOVA table and use the F statistic to test the null hypothesis that b1 = 0. Let alpha = .05.
+	Prob > F        =    0.0000
+#(c) Use the t statistic to test the null hypothesis that b1 = 0 at the .05 level of significance.
+	t = 0.000
+#(d) Determine the p value for each hypothesis test.
+	Both p values = 0.000
+#(e) State your conclusions in terms of the problem.
+	reject the null
+#(f) Construct the 95 percent confidence interval for b1.
+
+
+#9.7.1
+
+edit
+
+age	bilirubin
+78	7.5
+72	12.9
+81	14.3
+59	8
+64	14.1
+48	10.9
+46	12.3
+42	1
+58	5.2
+52	5.1
+44	7
+42	1.8
+45	0.8
+78	3.8
+47	3.5
+50	5.1
+57	16.5
+52	3.5
+58	5.6
+45	1.9
+
+regress bilirubin age
+
+      Source |       SS           df       MS      Number of obs   =        20
+-------------+----------------------------------   F(1, 18)        =      4.99
+       Model |  97.1718637         1  97.1718637   Prob > F        =    0.0385
+    Residual |  350.756142        18  19.4864523   R-squared       =    0.2169
+-------------+----------------------------------   Adj R-squared   =    0.1734
+       Total |  447.928005        19  23.5751582   Root MSE        =    4.4143
+
+------------------------------------------------------------------------------
+   bilirubin |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .1793236   .0803033     2.23   0.038     .0106126    .3480346
+       _cons |  -2.984188   4.596199    -0.65   0.524    -12.64044    6.672068
+------------------------------------------------------------------------------
+
+
+
+(a) Prepare a scatter diagram.
+
+	graph twoway lfit bilirubin age || scatter bilirubin age
+(b) Compute the sample correlation coefficient.
+	
+	display sqrt(.2169)
+	.46572524
+(c) Test H0 : p = 0 at the .05 level of significance and state your conclusions.
+	0.038
+(d) Determine the p value for the test.
+	0.038
+(e) Construct the 95 percent confidence interval for r.
+	.0106126    .3480346
+
+
+#9.7.5 
+
+edit
+
+paco2	pao2
+40	101
+47	69
+34	132
+42	65
+54	72
+48	76
+53.6	67.2
+56.9	70.9
+58	73
+45	66
+54.5	80
+54	72
+43	105
+44.3	113
+53.9	69.2
+41.8	66.7
+33	67
+43.1	77.5
+52.4	65.1
+37.9	71
+34.5	86.5
+40.1	74.7
+33	94
+59.9	60.4
+62.6	52.5
+54.1	76.9
+45.7	65.3
+40.6	80.3
+56.6	53.2
+59	71.9
+
+
+regress pao2 paco2
+
+      Source |       SS           df       MS      Number of obs   =        30
+-------------+----------------------------------   F(1, 28)        =     10.98
+       Model |  2438.81665         1  2438.81665   Prob > F        =    0.0025
+    Residual |  6217.59706        28  222.057038   R-squared       =    0.2817
+-------------+----------------------------------   Adj R-squared   =    0.2561
+       Total |  8656.41371        29  298.497025   Root MSE        =    14.902
+
+------------------------------------------------------------------------------
+        pao2 |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       paco2 |  -1.048224   .3162982    -3.31   0.003    -1.696131   -.4003163
+       _cons |   126.1799   15.24257     8.28   0.000     94.95695    157.4029
+------------------------------------------------------------------------------
+
+
+(a) Prepare a scatter diagram.
+	graph twoway lfit pao2 paco2 || scatter pao2 paco2
+
+(b) Compute the sample correlation coefficient.
+	display sqrt(.2817)
+	.53075418
+
+(c) Test H0 : p = 0 at the .05 level of significance and state your conclusions.
+	0.003, reject the null
+(d) Determine the p value for the test.
+	0.003
+(e) Construct the 95 percent confidence interval for r.
+	-1.696131   -.4003163
