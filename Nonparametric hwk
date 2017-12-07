@@ -1,0 +1,163 @@
+#13.3.2 - STATA
+
+edit
+
+var1	var2
+1.5	2
+2	2
+3.5	4
+3	2.5
+3.5	4
+2.5	3
+2	3.5
+1.5	3
+1.5	2.5
+2	2.5
+3	2.5
+2	2.5
+
+
+
+rename var1 instructed
+
+rename var2 notinstructed
+
+signrank instructed = notinstructed
+
+Wilcoxon signed-rank test
+
+        sign |      obs   sum ranks    expected
+-------------+---------------------------------
+    positive |        2          11        38.5
+    negative |        9          66        38.5
+        zero |        1           1           1
+-------------+---------------------------------
+         all |       12          78          78
+
+unadjusted variance      162.50
+adjustment for ties      -10.63
+adjustment for zeros      -0.25
+                     ----------
+adjusted variance        151.63
+
+Ho: instructed = notinstructed
+             z =  -2.233
+    Prob > |z| =   0.0255
+
+
+#13.6.1 - STATA
+
+edit
+
+ranksum weight, by(grp)
+
+weight	grp
+252	1
+240	1
+205	1
+200	1
+170	1
+170	1
+320	1
+148	1
+214	1
+270	1
+265	1
+203	1
+215	1
+190	1
+270	1
+159	1
+204	1
+215	1
+254	1
+164	1
+288	1
+138	1
+240	1
+217	1
+240	1
+302	1
+312	1
+126	1
+268	1
+215	1
+183	1
+287	1
+210	1
+225	1
+258	1
+221	1
+185	2
+310	2
+212	2
+238	2
+184	2
+136	2
+200	2
+270	2
+200	2
+212	2
+182	2
+225	2
+195	2
+210	2
+190	2
+172	2
+190	2
+140	2
+280	2
+264	2
+270	2
+210	2
+192	2
+126	2
+220	2
+295	2
+202	2
+268	2
+220	2
+311	2
+164	2
+206	2
+170	2
+190	2
+
+#13.10.6
+
+spearman x y
+
+ Number of obs =      17
+Spearman's rho =       0.6974
+
+Test of Ho: x and y are independent
+    Prob > |t| =       0.0019
+
+
+edit
+
+x	y
+500	525
+475	130
+390	325
+325	190
+325	90
+205	295
+200	180
+75	74
+230	420
+50	60
+175	105
+130	148
+76	75
+200	250
+174	102
+201	151
+125	130
+
+
+
+
+
+
+
