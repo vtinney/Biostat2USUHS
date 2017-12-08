@@ -51,6 +51,26 @@ edit
 
 ranksum weight, by(grp)
 
+
+Two-sample Wilcoxon rank-sum (Mann-Whitney) test
+
+         grp |      obs    rank sum    expected
+-------------+---------------------------------
+           1 |       36      1378.5        1278
+           2 |       34      1106.5        1207
+-------------+---------------------------------
+    combined |       70        2485        2485
+
+unadjusted variance     7242.00
+adjustment for ties       -5.83
+                     ----------
+adjusted variance       7236.17
+
+Ho: weight(grp==1) = weight(grp==2)
+             z =   1.181
+    Prob > |z| =   0.2374
+
+
 weight	grp
 252	1
 240	1
