@@ -1,0 +1,247 @@
+******10.3.1
+
+edit
+
+MMO	ML	RA
+52.34	100.85	32.08
+51.9	93.08	39.21
+52.8	98.43	33.74
+50.29	102.95	34.19
+57.79	108.24	35.13
+49.41	98.34	30.92
+53.28	95.57	37.71
+59.71	98.85	44.71
+53.32	98.32	33.17
+48.53	92.7	31.74
+51.59	88.89	37.07
+58.52	104.06	38.71
+62.93	98.18	43.89
+57.62	91.01	41.06
+65.64	96.98	41.92
+52.85	97.85	35.25
+64.43	96.89	45.11
+57.25	98.35	39.44
+50.82	90.65	38.33
+40.48	92.99	25.93
+59.68	108.97	36.78
+54.35	91.85	42.02
+47	104.3	27.2
+47.23	93.16	31.37
+41.19	94.18	27.87
+42.76	89.56	28.69
+51.88	105.85	31.04
+42.77	89.29	32.78
+52.34	92.58	37.82
+50.45	98.64	33.36
+43.18	83.7	31.93
+41.99	88.46	28.32
+39.45	94.93	24.82
+38.91	96.81	23.88
+49.1	93.13	36.17
+
+regress mmo ml ra
+
+      Source |       SS           df       MS      Number of obs   =        35
+-------------+----------------------------------   F(2, 32)        =    185.13
+       Model |  1576.99016         2  788.495081   Prob > F        =    0.0000
+    Residual |  136.295108        32  4.25922211   R-squared       =    0.9204
+-------------+----------------------------------   Adj R-squared   =    0.9155
+       Total |  1713.28527        34  50.3907432   Root MSE        =    2.0638
+
+------------------------------------------------------------------------------
+         mmo |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          ml |   .4731743   .0611653     7.74   0.000     .3485847     .597764
+          ra |   1.071172   .0627967    17.06   0.000     .9432599    1.199085
+       _cons |  -31.42481   6.147466    -5.11   0.000    -43.94678   -18.90283
+------------------------------------------------------------------------------
+
+MLW Hwk 1
+
+(1)	Obtain the regression equation involving y and two x variables.
+		Regression Equestion: -31.425 + 0.473(X1) + 1.071(X2)
+
+(2)	Obtain the predicted value when x1=95 and x2=35.
+		-31.425 + 0.473(95) + 1.071(35) = 50.995
+
+
+MLR Hwk 2
+
+      (1) Compute R-square.  
+	R-squared       =    0.9204
+      (2) Conduct F test for significant overall regression.
+	Prob > F        =    0.0000
+      (3) Conduct t test for significant contribution of each individual variable.
+	See above regression output. Call t significant
+
+
+
+MLW Hwk 3
+
+(1)  Assess the goodness of fit of the regression model for each of the two problems in the assignment of Multiple Regression I.
+
+
+predict resid
+rvfplot, yline(0)
+
+predict si, rsta
+
+predict yhat
+(option xb assumed; fitted values)
+
+scatter si yhat, yline(0)
+
+Answer: the model is a good fit
+
+
+*******10.3.3
+
+edit
+
+Y	X1	X2
+61.6	6	6.3
+53.2	4.4	5.5
+65.5	9.1	3.6
+64.9	8.1	5.8
+72.7	9.7	6.8
+52.2	4.8	7.9
+50.2	7.6	4.2
+44	4.4	6
+53.8	9.1	2.8
+53.5	6.7	6.7
+
+regress y x1 x2
+
+regress y x1 x2
+
+      Source |       SS           df       MS      Number of obs   =        10
+-------------+----------------------------------   F(2, 7)         =      7.05
+       Model |  452.563706         2  226.281853   Prob > F        =    0.0210
+    Residual |   224.70019         7  32.1000271   R-squared       =    0.6682
+-------------+----------------------------------   Adj R-squared   =    0.5734
+       Total |  677.263896         9   75.251544   Root MSE        =    5.6657
+
+------------------------------------------------------------------------------
+           y |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |   4.016798   1.071359     3.75   0.007     1.483437    6.550158
+          x2 |   2.811754    1.37859     2.04   0.081    -.4480918    6.071601
+       _cons |   13.44923   13.23155     1.02   0.343    -17.83843    44.73688
+------------------------------------------------------------------------------
+
+MLR Hwk 1
+
+
+(1)	Obtain the regression equation involving y and two x variables.
+		Regression Equestion: 13.449 + 4.017(X1) + 2.812(X2)
+
+(2)	Obtain the predicted value when x1=5 and x2=6.
+		13.449 + 4.017(5) + 2.812(6) = 50.406
+
+MLR Hwk 2
+
+      (1) Compute R-square.  
+	R-squared       =    0.6682
+      (2) Conduct F test for significant overall regression.
+	Prob > F        =    0.0210
+      (3) Conduct t test for significant contribution of each individual variable.
+	See above regression output. Only x1 significant.
+
+
+MLW Hwk 3
+
+(1)  Assess the goodness of fit of the regression model for each of the two problems in the assignment of Multiple Regression I.
+
+predict resid
+rvfplot, yline(0)
+
+predict resid
+rvfplot, yline(0)
+
+predict si, rsta
+
+predict yhat
+(option xb assumed; fitted values)
+
+scatter si yhat, yline(0)
+
+Answer: the model is a good fit
+
+
+*******11.2.1 D
+
+(2) Read Example 11.2.1, D.  Use the data on Sakai to fit the regression model and assess the goodness of fit of the model.
+
+edit
+
+case	y	x1	x2
+1	2940	38	1
+2	3130	38	0
+3	2420	36	1
+4	2450	34	0
+5	2760	39	1
+6	2440	35	1
+7	3226	40	0
+8	3301	42	1
+9	2729	37	0
+10	3410	40	0
+11	2715	36	1
+12	3095	39	0
+13	3130	39	1
+14	3244	39	0
+15	2520	35	0
+16	2928	39	1
+17	3523	41	0
+18	3446	42	1
+19	2920	38	0
+20	2957	39	1
+21	3530	42	0
+22	2580	38	1
+23	3040	37	0
+24	3500	42	1
+25	3200	41	1
+26	3322	39	0
+27	3459	40	0
+28	3346	42	1
+29	2619	35	0
+30	3175	41	1
+31	2740	38	1
+32	2841	36	0
+
+
+
+regress y x1 x2
+
+      Source |       SS           df       MS      Number of obs   =        32
+-------------+----------------------------------   F(2, 29)        =    125.45
+       Model |  3348719.67         2  1674359.84   Prob > F        =    0.0000
+    Residual |  387069.827        29  13347.2354   R-squared       =    0.8964
+-------------+----------------------------------   Adj R-squared   =    0.8892
+       Total |   3735789.5        31  120509.339   Root MSE        =    115.53
+
+------------------------------------------------------------------------------
+           y |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |   143.1003    9.12812    15.68   0.000     124.4312    161.7694
+          x2 |   -244.544   41.98176    -5.83   0.000    -330.4064   -158.6817
+       _cons |  -2389.573   349.2061    -6.84   0.000    -3103.779   -1675.366
+------------------------------------------------------------------------------
+
+
+predict resid
+rvfplot, yline(0)
+
+predict resid
+rvfplot, yline(0)
+
+predict si, rsta
+
+predict yhat
+(option xb assumed; fitted values)
+
+scatter si yhat, yline(0)
+
+qnorm resid
+swilk resid
+
+Answer: model is a good fit
