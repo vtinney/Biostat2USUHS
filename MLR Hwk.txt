@@ -236,14 +236,13 @@ predict resid
 rvfplot, yline(0)
 
 predict resid
-rvfplot, yline(0)
-
-predict si, rsta
-
-predict yhat
 (option xb assumed; fitted values)
 
-scatter si yhat, yline(0)
+predict si, rsta
+scatter si x1
+scatter si resid
+scatter si x1
+scatter si x2
 
 qnorm resid
 swilk resid
