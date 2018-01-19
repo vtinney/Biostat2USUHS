@@ -89,7 +89,8 @@ predict si, rsta
 predict yhat
 (option xb assumed; fitted values)
 
-scatter si yhat, yline(0)
+scatter si ml
+scatter si ra
 
 Answer: the model is a good fit
 
@@ -159,6 +160,9 @@ predict resid
 rvfplot, yline(0)
 
 predict si, rsta
+
+scatter si x1
+scatter si x2
 
 predict yhat
 (option xb assumed; fitted values)
