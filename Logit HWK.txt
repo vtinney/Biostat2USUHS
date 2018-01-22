@@ -1,0 +1,57 @@
+DENGUE EXAMPLE
+
+edit
+
+*(5 variables, 196 observations pasted into data editor)
+
+logit dengue age mosnet sector
+
+Iteration 0:   log likelihood = -118.16467  
+Iteration 1:   log likelihood = -109.16998  
+Iteration 2:   log likelihood = -108.92263  
+Iteration 3:   log likelihood = -108.92145  
+Iteration 4:   log likelihood = -108.92145  
+
+Logistic regression                             Number of obs     =        196
+                                                LR chi2(3)        =      18.49
+                                                Prob > chi2       =     0.0003
+Log likelihood = -108.92145                     Pseudo R2         =     0.0782
+
+------------------------------------------------------------------------------
+      dengue |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |   .0245444   .0086758     2.83   0.005     .0075402    .0415486
+      mosnet |    .930021   1.226411     0.76   0.448      -1.4737    3.333742
+      sector |   .2901203    .126627     2.29   0.022     .0419359    .5383047
+       _cons |  -4.376716   2.488661    -1.76   0.079    -9.254402    .5009698
+------------------------------------------------------------------------------
+
+Fitted model: -4.376716 + 0.0245444(age) + 0.930021(mosnet) + 0.2901203(sector)
+
+VICTIMM EXAMPLE
+
+
+
+edit
+
+. *(2 variables, 1024 observations pasted into data editor)
+
+. logit gender victim
+
+Iteration 0:   log likelihood = -654.30256  
+Iteration 1:   log likelihood = -654.24033  
+Iteration 2:   log likelihood = -654.24032  
+
+Logistic regression                             Number of obs     =      1,024
+                                                LR chi2(1)        =       0.12
+                                                Prob > chi2       =     0.7242
+Log likelihood = -654.24032                     Pseudo R2         =     0.0001
+
+------------------------------------------------------------------------------
+      gender |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      victim |  -.0764075   .2159081    -0.35   0.723    -.4995796    .3467647
+       _cons |   .6849972   .0698814     9.80   0.000     .5480321    .8219623
+
+Fitted model: 0.6849972 - 0.0764075(victim)
+
