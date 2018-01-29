@@ -58,10 +58,11 @@ Log likelihood = -101.85308                     Pseudo R2         =     0.1380
 	Find a 95% CI for the true odds ratio.
 
 		beta*delta = 0.024(5) = 1.13
+	
 
 * Hwk 3
 
-1. 	For DENGUE, find a ìreasonableî cutoff point to predict the outcome for a 
+1. 	For DENGUE, find a ‚Äúreasonable‚Äù cutoff point to predict the outcome for a 
         person where AGE=18, MOSENET=1, SECTOR1=0, SECTOR2=1,  
         SECTOR3=0, and SECTOR4=0.
 
