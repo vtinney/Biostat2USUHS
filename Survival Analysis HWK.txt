@@ -1,0 +1,49 @@
+// use data from 14.3.1
+
+stset time, failure(mtc)
+
+     failure event:  mtc != 0 & mtc < .
+obs. time interval:  (0, time]
+ exit on or before:  failure
+
+------------------------------------------------------------------------------
+         53  total observations
+          1  observation ends on or before enter()
+------------------------------------------------------------------------------
+         52  observations remaining, representing
+         19  failures in single-record/single-failure data
+        371  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =        19
+
+
+sts graph, by(_st)
+
+         failure _d:  mtc
+   analysis time _t:  time
+
+
+// use data from 14.4.1
+
+stset time, failure(status)
+
+     failure event:  status != 0 & status < .
+obs. time interval:  (0, time]
+ exit on or before:  failure
+
+------------------------------------------------------------------------------
+         50  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+         50  observations remaining, representing
+         28  failures in single-record/single-failure data
+      1,441  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =        60
+
+
+
+sts graph, by(group)
+
